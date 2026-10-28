@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Darian Smith | Agents of Kalanon</title>
+<meta name="description" content="A homepage idea made by Sparsh Saini for Darian Smith. Not his official site.">
+<meta property="og:title" content="Darian Smith | Mercury's Return">
+<meta property="og:description" content="A homepage idea made by Sparsh Saini for Darian Smith. Not his official site.">
+<meta property="og:image" content="https://sparshsainied-prog.github.io/dariansmith/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/plate.jpg">
+<style>
+:root{
+  --night:#08112a; --deep:#0e1d44; --blue:#24498f; --mist:#d6e0f2; --mist-soft:#9fb1d4;
+  --red:#b3151d; --red-dark:#5e0a10; --gold:#c8a052; --ink:#e9eef8;
+  --display:"Cinzel", "Trajan Pro", Georgia, serif; --text:"EB Garamond", Georgia, serif;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--text);font-size:1.18rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.strip{background:#000;color:var(--mist);font:500 .82rem/1.4 var(--text);text-align:center;padding:.55rem 1rem;letter-spacing:.01em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* the cover's series line: gold rule with arrow ends */
+.rule{display:flex;align-items:center;gap:.7rem;color:var(--gold);font:600 .74rem/1 var(--display);letter-spacing:.2em;text-transform:uppercase}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 20%,var(--gold) 80%,transparent)}
+.arrow{display:inline-block;width:26px;height:8px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 8'%3E%3Cpath d='M0 4h18' stroke='%23c8a052' stroke-width='1.2'/%3E%3Cpath d='M18 1l7 3-7 3 2-3z' fill='%23c8a052'/%3E%3Ccircle cx='4' cy='4' r='1.6' fill='%23c8a052'/%3E%3C/svg%3E")}
+.arrow.l{transform:scaleX(-1)}
+
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.2rem;font:600 .8rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);transition:color .2s,background-color .2s}
+.btn:hover,.btn:focus-visible{background:rgba(200,160,82,.14);color:#fff}
+.btn.red{background:linear-gradient(#c01b23,#84101a);border-color:#e0b46a;color:#fff;box-shadow:0 2px 0 var(--red-dark)}
+.btn.red:hover{background:linear-gradient(#d0222b,#94131d)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:360vh;background:var(--night)}
+.stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--night)}
+.world{position:absolute;left:0;top:0;width:1000px;height:1410px;transform-origin:0 0;will-change:transform;overflow:hidden}
+.world img,.world .pl{position:absolute;will-change:transform,opacity}
+.plate{left:0;top:0;width:1000px;height:1410px}
+.wa{left:1px;top:431px;width:482px;height:984px;transform-origin:479px 519px}
+.wb{left:476px;top:428px;width:524px;height:987px;transform-origin:4px 522px}
+.ylani{left:336px;top:636px;width:433px;height:776px;transform-origin:144px 774px}
+.title{left:55px;top:66px;width:881px;height:477px;transform-origin:440px 238px}
+.side{position:absolute;top:0;width:150px;height:1410px;pointer-events:none}
+.side.l{left:-1px;background:linear-gradient(90deg,var(--night),rgba(8,17,42,0))}
+.side.r{right:-1px;background:linear-gradient(270deg,var(--night),rgba(8,17,42,0))}
+.base{position:absolute;left:-10px;right:-10px;top:1250px;height:170px;background:linear-gradient(rgba(8,17,42,0),var(--night))}
+
+.nav{position:absolute;z-index:5;left:0;right:0;top:0;background:linear-gradient(rgba(8,17,42,.78),rgba(8,17,42,.4) 60%,rgba(8,17,42,0));padding-bottom:2.2rem!important;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem clamp(1rem,3vw,2.4rem)}
+.nav .name{font:700 1rem/1 var(--display);letter-spacing:.2em;text-decoration:none;text-shadow:0 1px 8px rgba(8,17,42,.7)}
+.nav ul{display:flex;gap:1.5rem;margin:0;padding:0;list-style:none}
+.nav ul a{font:600 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--mist);text-shadow:0 1px 8px rgba(8,17,42,.8)}
+.nav ul a:hover{color:#fff}
+
+.open{position:absolute;z-index:4;left:50%;bottom:16vh;transform:translateX(-50%);width:min(36rem,88vw);text-align:center;will-change:opacity,transform}
+.open .tag{font:600 .8rem/1.4 var(--display);letter-spacing:.32em;color:var(--red-dark);text-transform:uppercase}
+.open p.line{margin:.5rem 0 0;font:italic 400 clamp(1.7rem,3.4vw,2.6rem)/1.15 var(--text);color:#0d1a3a;text-shadow:0 0 18px rgba(230,238,250,.9)}
+.copy{position:absolute;z-index:4;will-change:opacity,transform}
+.copy .series{margin:0 0 .9rem}
+.copy .cover-tag{font:600 .74rem/1.4 var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--mist);margin:0 0 .8rem}
+.copy p{margin:0 0 1.1rem;color:var(--mist);text-shadow:0 1px 10px rgba(8,17,42,.9)}
+.copy .note{font-style:italic;color:var(--mist-soft);font-size:1rem}
+.copy .acts{display:flex;flex-wrap:wrap;gap:.8rem}
+@media (min-width:900px){
+  .copy p{font-size:1.28rem}
+  .copy .cover-tag{font-size:.78rem}
+  .copy{left:clamp(1.5rem,6vw,6rem);top:50%;width:min(25rem,30vw);transform:translateY(-50%)}
+}
+@media (max-width:899px){
+  .nav ul{display:none}
+  .copy{left:1rem;right:1rem;bottom:1.2rem;text-align:center}
+  .copy .series{margin-bottom:.6rem}
+  .copy p{font-size:1.05rem;margin-bottom:.8rem}
+  .copy .acts{justify-content:center}
+  .scrim{position:absolute;z-index:3;left:0;right:0;bottom:0;height:46%;background:linear-gradient(rgba(8,17,42,0),rgba(8,17,42,.92) 55%);will-change:opacity}
+  .open{bottom:auto;top:60vh}
+}
+
+/* ---------- calm sections ---------- */
+main section{padding:clamp(4rem,9vw,7.5rem) clamp(1rem,5vw,4rem)}
+.wrap{max-width:68rem;margin:0 auto}
+h2{font:600 clamp(1.9rem,4vw,3rem)/1.1 var(--display);margin:0 0 1.4rem;letter-spacing:.04em}
+h3{font:600 1.25rem/1.25 var(--display);margin:0 0 .4rem;letter-spacing:.05em}
+p{margin:0 0 1.1rem}
+.lead{font-size:1.32rem;color:var(--mist)}
+.case4{background:linear-gradient(var(--night),var(--deep))}
+.case4 .wrap{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.case4 .cover{box-shadow:0 30px 60px -20px rgba(0,0,0,.8);width:100%}
+.alley{font:italic 1.5rem/1.3 var(--text);color:#fff;border-left:2px solid var(--red);padding-left:1rem;margin:1.6rem 0}
+.case4 .sold{color:var(--mist-soft);font-size:1.05rem}
+.case4 .acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+
+.files{background:var(--mist);color:#14203f}
+.files h2{color:#14203f}
+.files .intro{max-width:40rem;font-size:1.25rem}
+.ledger{list-style:none;margin:2.5rem 0 0;padding:0;border-top:1px solid #14203f}
+.ledger li{display:grid;grid-template-columns:5.5rem 7rem minmax(0,1fr) auto;gap:1.4rem;align-items:center;padding:1.4rem 0;border-bottom:1px solid rgba(20,32,63,.35)}
+.ledger .no{font:700 .78rem/1.3 var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--c)}
+.ledger img{width:7rem;box-shadow:0 10px 20px -10px rgba(0,0,0,.6)}
+.ledger p{margin:0;font-size:1.08rem}
+.ledger .yr{font-size:.95rem;color:#4b5877}
+.ledger a.buy{font:600 .74rem/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:#14203f;text-decoration:none;border-bottom:1px solid var(--c);padding-bottom:.3rem;white-space:nowrap}
+
+.agents{background:var(--deep)}
+.agents .wrap{max-width:56rem}
+.roster{margin:2.4rem 0 0}
+.roster div{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr);gap:1.6rem;padding:1.3rem 0;border-top:1px solid rgba(200,160,82,.35)}
+.roster dt{font:600 1.05rem/1.35 var(--display);letter-spacing:.06em;color:#fff}
+.roster dt span{display:block;font:italic 400 1rem/1.4 var(--text);letter-spacing:0;color:var(--gold);margin-top:.25rem}
+.roster dd{margin:0;color:var(--mist)}
+.small{font-size:.95rem;color:var(--mist-soft)}
+
+.him{background:var(--night)}
+.him .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,22rem);gap:clamp(2rem,5vw,4.5rem)}
+.him .awards{list-style:none;margin:0;padding:0}
+.him .awards li{padding:.9rem 0;border-bottom:1px solid rgba(200,160,82,.3);font-size:1.08rem}
+.him .awards li:first-child{border-top:1px solid rgba(200,160,82,.3)}
+.him .others{margin-top:2rem}
+.him .others a{color:var(--mist)}
+
+.writers{background:linear-gradient(#1a0609,#2a0a0f);}
+.writers .wrap{max-width:60rem}
+.books2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,4vw,3.5rem);margin-top:2.5rem}
+.books2 article{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1.3rem;align-items:start}
+.books2 img{width:7.5rem;box-shadow:0 14px 28px -12px rgba(0,0,0,.8)}
+.books2 p{font-size:1.05rem;color:#e7d9d3}
+.mail{margin-top:3.5rem;padding-top:2rem;border-top:1px solid rgba(200,160,82,.4);display:flex;flex-wrap:wrap;gap:1.2rem 2rem;align-items:center;justify-content:space-between}
+.mail p{margin:0;max-width:34rem}
+
+footer{background:#000;color:var(--mist-soft);text-align:center;padding:2.5rem 1rem 3rem;font-size:.95rem}
+footer .links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;font:600 .72rem/1 var(--display);letter-spacing:.18em;text-transform:uppercase}
+footer .links a{text-decoration:none;color:var(--mist)}
+
+@media (max-width:760px){
+  .case4 .wrap,.him .wrap{grid-template-columns:1fr}
+  .case4 .cover{max-width:15rem}
+  .ledger li{grid-template-columns:5rem minmax(0,1fr);gap:.9rem 1rem}
+  .ledger .no{grid-column:1/-1}
+  .ledger img{width:5rem;grid-row:span 2}
+  .ledger a.buy{justify-self:start}
+  .roster div{grid-template-columns:1fr;gap:.4rem}
+  .books2{grid-template-columns:1fr}
+  .books2 article{grid-template-columns:6rem minmax(0,1fr)}
+  .books2 img{width:6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero{height:auto}
+  .stage{position:relative;height:100vh}
+  .open{display:none}
+}
+</style>
+</head>
+<body>
+<div class="strip">A homepage idea made by Sparsh Saini for Darian Smith. Not his official site.</div>
+
+<header class="hero" id="top">
+  <div class="stage" id="stage">
+    <div class="world" id="world" aria-hidden="true">
+      <img class="plate" src="img/plate.jpg" alt="" width="1000" height="1410">
+      <img class="ylani" id="ylani" src="img/ylani.webp" alt="" width="433" height="776">
+      <img class="wa" id="wa" src="img/wisps-a.webp" alt="" width="482" height="984">
+      <img class="wb" id="wb" src="img/wisps-b.webp" alt="" width="524" height="987">
+      <img class="title" id="ttl" src="img/title.webp" alt="" width="881" height="477">
+      <div class="base"></div>
+      <div class="side l"></div><div class="side r"></div>
+    </div>
+    <nav class="nav" aria-label="Main">
+      <a class="name" href="#top">DARIAN SMITH</a>
+      <ul>
+        <li><a href="#case-four">Case four</a></li>
+        <li><a href="#case-files">Case files</a></li>
+        <li><a href="#agents">The agents</a></li>
+        <li><a href="#writers">For writers</a></li>
+      </ul>
+    </nav>
+    <div class="open" id="open">
+      <div class="tag">Solve the murder. Save the world.</div>
+      <p class="line">&ldquo;Welcome back, Mistress Mercury.&rdquo;</p>
+    </div>
+    <div class="scrim" id="scrim"></div>
+    <div class="copy" id="copy">
+      <h1 class="sr">Mercury's Return, an Agents of Kalanon mystery by Darian Smith</h1>
+      <p class="cover-tag">Solve the murder. Save the world.</p>
+      <div class="rule series"><span class="arrow l"></span>Agents of Kalanon: Book 4<span class="arrow"></span></div>
+      <p>Ylani has been summoned home to Nilar, where Brannon's parents are accused of murder. Out now.</p>
+      <div class="acts">
+        <a class="btn red" href="https://www.amazon.com/Mercurys-Return-Agents-Kalanon-Book-ebook/dp/B0GQL5Q55Q">Buy the book</a>
+        <a class="btn" href="#case-files">Start at case one</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="case4" id="case-four">
+  <div class="wrap">
+    <img class="cover" src="img/mercurys-return.webp" alt="Cover of Mercury's Return: a woman in a red dress walks toward a temple on a cliff, wrapped in white threads of magic" width="600" height="960" loading="lazy">
+    <div>
+      <h2>Mercury's Return</h2>
+      <p class="lead">Going home isn't safe when your friends are more dangerous than your enemies.</p>
+      <p class="alley">The alley was dark and ominously quiet but for the measured beat of footsteps behind her. Hunting her.</p>
+      <p>Ambassador Ylani has been summoned back to Nilar, where Brannon's parents are accused of murder. If the team can't find the true culprit, the new peace between the two countries crumbles, and with it Brannon's last chance to forgive his parents. Meanwhile Magus Draeson is struggling in his unlikely new role as a parent and mentor.</p>
+      <p class="sold">Launched at Auckland Armageddon, Labour Weekend 2026, and the table ran out. In Darian's words: &ldquo;It's possible I underestimated how popular the new book would be.&rdquo; More copies are on the way.</p>
+      <div class="acts">
+        <a class="btn red" href="https://www.amazon.com/Mercurys-Return-Agents-Kalanon-Book-ebook/dp/B0GQL5Q55Q">Buy on Amazon</a>
+        <a class="btn" href="https://www.instagram.com/darianwordsmith/">Restock news on Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="files" id="case-files">
+  <div class="wrap">
+    <h2>The case files</h2>
+    <p class="intro">If CSI were set in an epic fantasy world, it would be the Agents of Kalanon. Each book is a case. Start at the first one.</p>
+    <ol class="ledger">
+      <li style="--c:#9a6a1c">
+        <span class="no">Case one</span>
+        <img src="img/kalanons-rising.webp" alt="Cover of Kalanon's Rising" width="500" height="800" loading="lazy">
+        <div><h3>Kalanon's Rising</h3><p>The King's cousin is murdered, the crime scene suggests dark magic, and the clues point to the Nilarian ambassador.</p><p class="yr">2016. Winner of the SpecFicNZ and Steam Press manuscript competition.</p></div>
+        <a class="buy" href="https://www.amazon.com/Kalanons-Rising-Agents-Kalanon-Book-ebook/dp/B01LWZOTWS">Buy</a>
+      </li>
+      <li style="--c:#2f7a4a">
+        <span class="no">Case two</span>
+        <img src="img/starlights-children.webp" alt="Cover of Starlight's Children" width="500" height="800" loading="lazy">
+        <div><h3>Starlight's Children</h3><p>Something is hunting children in the streets of Alapra, and their parents are found with hearts turned to glass.</p><p class="yr">2017</p></div>
+        <a class="buy" href="https://www.amazon.com/Starlights-Children-Agents-Kalanon-Book-ebook/dp/B0721FC3Y4">Buy</a>
+      </li>
+      <li style="--c:#6a3a9a">
+        <span class="no">Case three</span>
+        <img src="img/battles-legacy.webp" alt="Cover of Battle's Legacy" width="500" height="800" loading="lazy">
+        <div><h3>Battle's Legacy</h3><p>People are dying by magic in ways that recall the war, and this time the king himself is threatened.</p><p class="yr">2020</p></div>
+        <a class="buy" href="https://www.amazon.com/Battles-Legacy-Agents-Kalanon-Book-ebook/dp/B08KP78FSL">Buy</a>
+      </li>
+      <li style="--c:#b3151d">
+        <span class="no">Case four</span>
+        <img src="img/mercurys-return.webp" alt="Cover of Mercury's Return" width="600" height="960" loading="lazy">
+        <div><h3>Mercury's Return</h3><p>Ylani goes home to Nilar, where Brannon's parents are accused of murder.</p><p class="yr">October 2026</p></div>
+        <a class="buy" href="https://www.amazon.com/Mercurys-Return-Agents-Kalanon-Book-ebook/dp/B0GQL5Q55Q">Buy</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="agents" id="agents">
+  <div class="wrap">
+    <h2>The agents</h2>
+    <p class="lead">A war hero, a vain mage, a socially awkward priest and an ambassador from the other side of the war. Investigators of magical crime.</p>
+    <dl class="roster">
+      <div><dt>Sir Brannon Kesh<span>once known as the Bloodhawk</span></dt><dd>A war hero trying to make a new life for himself, until a series of strange murders pulls him into investigating magical crime.</dd></div>
+      <div><dt>Ambassador Ylani<span>Mistress Mercury</span></dt><dd>The Nilarian ambassador, an alluring woman with secrets of her own. In book four the secrets come home with her.</dd></div>
+      <div><dt>Magus Draeson<span>the mage with the dragon tattoo</span></dt><dd>Vain, gifted, and by book four, in the unlikely role of parent and mentor.</dd></div>
+      <div><dt>Brother Taran<span>the team's poisons expert</span></dt><dd>A priest facing a childhood he hoped he'd left behind. No one truly escapes the Children of Starlight.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="him" id="darian">
+  <div class="wrap">
+    <div>
+      <h2>The investigator behind them</h2>
+      <p class="lead">Darian Smith is an Auckland author, counsellor and writing educator, with degrees in Psychology and English and a Diploma of Counselling.</p>
+      <p>He has worked in family therapy, set up a free community counselling service, and by day works with people living with bleeding disorders such as haemophilia. He says that work shapes his fiction, where complex characters and emotional honesty come first.</p>
+      <p>He can also be seen on Legend of the Seeker and Spartacus, by those very swift with the pause button. Most Labour Weekends you'll find him at Auckland Armageddon.</p>
+      <p class="others small">Also by Darian: <a href="https://www.amazon.com/Lost-Pendant-Pania-Darian-Smith/dp/B0CH2418G4/">The Lost Pendant of Pania</a> (young adult, 2023), <a href="https://www.amazon.com/Currents-Change-Darian-Smith-ebook/dp/B00U8Q968I">Currents of Change</a> and <a href="https://www.amazon.com/Shifting-Worlds-collection-short-stories-ebook/dp/B0121OUVS8">Shifting Worlds</a>, sixteen stories.</p>
+    </div>
+    <ul class="awards" aria-label="Awards">
+      <li>Sir Julius Vogel Award</li>
+      <li>Two Koru Awards</li>
+      <li>SPFBO finalist</li>
+      <li>Won the SpecFicNZ and Steam Press manuscript competition with Kalanon&rsquo;s Rising</li>
+    </ul>
+  </div>
+</section>
+
+<section class="writers" id="writers">
+  <div class="wrap">
+    <h2>For writers</h2>
+    <p class="lead">Darian has taught writers for years to use the same psychology therapists use, so characters behave like people.</p>
+    <div class="books2">
+      <article>
+        <img src="img/psychology-workbook.webp" alt="Cover of The Psychology Workbook for Writers" width="500" height="800" loading="lazy">
+        <div><h3>The Psychology Workbook for Writers</h3><p>Each chapter takes one piece of psychological theory and gives two worksheets: one for your characters, one for your story.</p><a class="btn" href="https://www.amazon.com/Psychology-Workbook-Writers-realistic-characters-ebook/dp/B0143K2MNU/">Buy</a></div>
+      </article>
+      <article>
+        <img src="img/world-building-workbook.webp" alt="Cover of The World-Building Workbook for Writers" width="500" height="800" loading="lazy">
+        <div><h3>The World-Building Workbook for Writers</h3><p>Settings that work for your story, in any genre, not only epic fantasy. Coming in 2026.</p></div>
+      </article>
+    </div>
+    <div class="mail">
+      <p>New releases and where to find him in person, by email.</p>
+      <a class="btn red" href="https://darian-smith.com/#subscribe">Join the mailing list</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="links"><a href="https://www.instagram.com/darianwordsmith/">Instagram</a><a href="https://www.goodreads.com/author/show/7370521.Darian_Smith">Goodreads</a><a href="https://www.facebook.com/DarianSmithAuthor">Facebook</a></div>
+  <p>A mockup made by Sparsh Saini for Darian Smith. Not affiliated, not live.</p>
+</footer>
+
+<script>
+(function(){
+  var hero=document.getElementById('top'), world=document.getElementById('world'),
+      yl=document.getElementById('ylani'), wa=document.getElementById('wa'), wb=document.getElementById('wb'),
+      ttl=document.getElementById('ttl'), open=document.getElementById('open'), copy=document.getElementById('copy'),
+      scrim=document.getElementById('scrim');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vw,vh,wide,s0,s1,c0x,c0y,c1x,c1y,top0,span,tk,ttx,tty;
+  function clamp(v){return v<0?0:v>1?1:v}
+  function seg(p,a,b){return clamp((p-a)/(b-a))}
+  function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
+  function out(t){return 1-Math.pow(1-t,3)}
+  function measure(){
+    vw=innerWidth; vh=innerHeight; wide=vw>=900;
+    if(wide){ s1=vh/1300; c1x=vw*0.6; c1y=vh/2; s0=Math.max(vw*1.04/1000,vh*1.5/1410); }
+    else { s1=Math.max(vh/1410,vw/640); c1x=vw/2; c1y=vh/2+ (1410*s1-vh)/2*0.0; s0=s1*1.9; }
+    c0x=vw/2; c0y=vh*0.46;
+    // title: on phones shrink it to fit the screen width, centred
+    tk=1; ttx=0; tty=0;
+    if(!wide){ var want=vw*0.9/(881*s1); if(want<1){tk=want;} ttx=((vw/2-c1x)/s1+500)-495.5; tty=-(1-tk)*200+44/s1; }
+    var r=hero.getBoundingClientRect(); top0=r.top+scrollY; span=hero.offsetHeight-vh;
+  }
+  function frame(p){
+    var cam=ease(seg(p,0.06,0.72));
+    var s=Math.exp(Math.log(s0)+(Math.log(s1)-Math.log(s0))*cam);
+    // focus point in world coords moves from the temple (480,600) to the world centre (500,705)
+    var fx=480+(500-480)*cam, fy=600+((wide?650:705)-600)*cam;
+    var cx=c0x+(c1x-c0x)*cam, cy=c0y+(c1y-c0y)*cam;
+    world.style.transform='translate('+(cx-fx*s).toFixed(2)+'px,'+(cy-fy*s).toFixed(2)+'px) scale('+s.toFixed(4)+')';
+    // she walks past the camera and away into the picture
+    var w=seg(p,0.12,0.74), we=out(w);
+    var ys=1.85-0.85*we, sway=Math.sin(w*Math.PI*5)*(1-w)*1.6;
+    yl.style.transform='translate3d('+(60*(1-we)).toFixed(1)+'px,'+(380*(1-we)).toFixed(1)+'px,0) scale('+ys.toFixed(4)+') rotate('+sway.toFixed(2)+'deg)';
+    yl.style.opacity=seg(p,0.1,0.2).toFixed(3);
+    // the magic threads wind in round her from both sides
+    var t=out(seg(p,0.34,0.84));
+    wa.style.transform='rotate('+(-38*(1-t)).toFixed(2)+'deg) scale('+(1.35-0.35*t).toFixed(4)+')';
+    wb.style.transform='rotate('+(38*(1-t)).toFixed(2)+'deg) scale('+(1.35-0.35*t).toFixed(4)+')';
+    wa.style.opacity=wb.style.opacity=(seg(p,0.34,0.6)).toFixed(3);
+    // the cover's lettering settles last
+    var ti=out(seg(p,0.66,0.9));
+    ttl.style.opacity=ti.toFixed(3);
+    ttl.style.transform='translate('+ttx.toFixed(1)+'px,'+(tty-40*(1-ti)).toFixed(1)+'px) scale('+(tk*(1.1-0.1*ti)).toFixed(4)+')';
+    var o=1-seg(p,0.05,0.2);
+    open.style.opacity=o.toFixed(3); 
+    var c=out(seg(p,0.82,0.97));
+    copy.style.opacity=c.toFixed(3); copy.style.pointerEvents=c<0.5?'none':'auto';
+    if(scrim) scrim.style.opacity=c.toFixed(3);
+    if(wide) copy.style.transform='translateY(calc(-50% + '+(20*(1-c)).toFixed(1)+'px))';
+    else copy.style.transform='translateY('+(20*(1-c)).toFixed(1)+'px)';
+  }
+  var ticking=false;
+  function onScroll(){ if(!ticking){ticking=true; requestAnimationFrame(function(){ticking=false; frame(reduce?1:clamp((scrollY-top0)/span));});} }
+  measure(); frame(reduce?1:clamp((scrollY-top0)/span));
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',function(){measure(); frame(reduce?1:clamp((scrollY-top0)/span));});
+})();
+</script>
+</body>
+</html>
